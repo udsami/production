@@ -1,0 +1,28 @@
+# jgp (CSCS)
+easyblock = 'MakeCp'
+
+name = 'hellolib'
+version = '1.0'
+# versionsuffix = '-noxalt'
+
+homepage = 'http://www.cscs.ch'
+description = """lib test"""
+
+toolchain = {'name': 'CrayPGI', 'version': '2016.11'}
+
+sources = [SOURCELOWER_TAR_GZ]
+source_urls = [('ftp://ftp.cscs.ch/out/jgp/easybuild/hellolib-%(version)s.tar.gz')]
+checksums = [ 'd7609c824e3a1e193cd7d54a33a808f6' ] # hellolib-1.0.tar.gz
+# dependencies = [ ('xalt/daint-2016.11', EXTERNAL_MODULE) ]
+parallel = 1
+
+files_to_copy = [
+    (['libhello_PGI.a'], 'lib'),
+]
+
+sanity_check_paths = {
+    'files': ['lib/libhello_PGI.a'],
+    'dirs': ['lib'],
+}
+
+moduleclass = 'debugger'
