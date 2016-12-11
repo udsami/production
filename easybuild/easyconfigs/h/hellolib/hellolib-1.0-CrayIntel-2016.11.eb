@@ -17,6 +17,8 @@ parallel = 1
 
 files_to_copy = [
     (['libhello_INTEL.a'], 'lib'),
+    (['variabledef.mod'], 'include'),
+    (['jacobimod.mod'], 'include'),
 ]
 
 sanity_check_paths = {

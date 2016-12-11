@@ -17,6 +17,8 @@ parallel = 1
 
 files_to_copy = [
     (['libhello_CRAY.a'], 'lib'),
+    (['VARIABLEDEF.mod'], 'include'),
+    (['JACOBIMOD.mod'], 'include'),
 ]
 
 sanity_check_paths = {
