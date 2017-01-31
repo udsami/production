@@ -8,7 +8,7 @@ description = """ATLAS (Automatically Tuned Linear Algebra Software) is the appl
  algebra kernel library."""
 
 toolchain = {'name': 'gmvapich2', 'version': '15.12'}
-toolchainopts = {'pic': True}
+#toolchainopts = {'pic': True}
 
 lapackver = '3.5.0'
 versionsuffix = '-LAPACK-%s' % lapackver
