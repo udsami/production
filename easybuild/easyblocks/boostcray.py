@@ -157,12 +157,12 @@ class boostcray(EasyBlock):
         bjamoptions = " --prefix=%s" % self.objdir
 
         # specify path for bzip2/zlib if module is loaded
-        if not self.cfg['boost_mpi']:
-            for lib in ["bzip2", "zlib"]:
-                libroot = get_software_root(lib)
-                if libroot:
-                    bjamoptions += " -s%s_INCLUDE=%s/include" % (lib.upper(), libroot)
-                    bjamoptions += " -s%s_LIBPATH=%s/lib" % (lib.upper(), libroot)
+        #if not self.cfg['boost_mpi']:
+        for lib in ["bzip2", "zlib"]:
+            libroot = get_software_root(lib)
+            if libroot:
+                bjamoptions += " -s%s_INCLUDE=%s/include" % (lib.upper(), libroot)
+                bjamoptions += " -s%s_LIBPATH=%s/lib" % (lib.upper(), libroot)
 
         if self.cfg['boost_mpi']:
             self.log.info("Building boost_mpi library")

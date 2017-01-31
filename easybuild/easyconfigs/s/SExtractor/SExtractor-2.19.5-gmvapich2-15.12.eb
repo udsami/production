@@ -1,0 +1,33 @@
+# @author: victor holanda rusu
+
+easyblock = 'MakeCp'
+
+name = 'SExtractor'
+version = '2.19.5'
+
+homepage = 'http://www.astromatic.net/software/sextractor'
+description = 'SExtractor is a program that builds a catalogue of objects from an astronomical image. Although it is particularly oriented towards reduction of large scale galaxy-survey data, it can perform reasonably well on moderately crowded star fields.'
+
+toolchain = {'name': 'gmvapich2', 'version': '15.12'}
+toolchainopts = { 'verbose' : False }
+
+source_urls = ['http://www.astromatic.net/download/sextractor']
+sources = [SOURCELOWER_TAR_GZ]
+
+#sextractor-2.19.5.tar.gz
+
+dependencies = [ ('FFTW', '3.3.4'),
+                 ('ATLAS', '3.10.2', '-LAPACK-3.5.0'), ]
+
+configopts = ' --with-fftw-libdir=$EBROOTFFTW/lib --with-fftw-incdir=$EBROOTFFTW/include --enable-shared --with-atlas-libdir=$EBROOTATLAS/lib --with-atlas-incdir=$EBROOTATLAS/include '
+
+buildopts = 'install'
+
+files_to_copy = []
+
+sanity_check_paths = {
+    'files' : [ 'bin/sex' ],
+    'dirs'  : [],
+}
+
+moduleclass = 'tools'
