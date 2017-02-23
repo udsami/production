@@ -1,13 +1,13 @@
 easyblock = 'Bundle'
 
 name = 'perftools-cscs'
-version = '645nogpu'
+version = '645-nogpu'
 
 homepage = 'http://user.cscs.ch/compiling_and_optimizing/performance_tools/craypat/'
 description = """CrayPat gives performance details of application code running on Cray systems."""
 toolchain = {'name': 'dummy', 'version': 'dummy'}
 
-dependencies = [ ( 'perftools-base-cscs', '645nogpu' ), ]
+dependencies = [ ( 'perftools-base-cscs', '645-nogpu' ), ]
 
 modtclfooter = """
 # HOSTNAME ------------------------------------------------------
@@ -37,7 +37,7 @@ proc PrintPerftoolsError { } {
     puts stderr "--------------------------------------------------------------------------------"
 }
 
-# module load perftools-base-cscs/643nogpu
+# module load perftools-base-cscs/645-nogpu
 module load perftools-lite
 
 proc ModulesHelp { } {
